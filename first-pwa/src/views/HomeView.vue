@@ -1,24 +1,20 @@
 <template>
     <q-layout view="lHh Lpr lFf">
-        <q-page-container>
-            <router-view />
-        </q-page-container>
-        <q-footer elevated class="bg-grey-8 text-white">
-            <BottomNav></BottomNav>
-        </q-footer>
+        <div class="q-pa-md row justify-center">
+            <div style="width: 100%; max-width: 400px">
+                <q-chat-message :text="['hey, how are you?']"
+                                sent />
+                <q-chat-message :text="['doing fine, how r you?']" />
+            </div>
+        </div>
+
     </q-layout>
 </template>
 
 <script>
     import { defineComponent, ref } from 'vue';
-    import BottomNav from '@/components/BottomNav.vue'
-
     export default defineComponent({
-        name: 'App',
-
-        components: {
-            BottomNav
-        },
+        name: 'HomeView',
 
         setup() {
             const leftDrawerOpen = ref(false);
@@ -30,5 +26,5 @@
                 }
             };
         }
-    })
+    });
 </script>
